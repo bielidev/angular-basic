@@ -1,19 +1,28 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #b3cbdd">
-    <a class="navbar-brand" href="#">Angular Developer</a>
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Admin</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+<header id="header" class="d-flex flex-column justify-content-center">
+    <nav id="navbar" class="navbar nav-menu">
+        <ul>
+            <li>
+                <a [routerLink]="['/']" class="nav-link" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{ exact: true }"><i class="bx bx-home"></i> <span>Home</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/about']"
+          class="nav-link"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          ><i class="bx bx-user"></i> <span>About</span></a
+        >
+      </li>
+      <li>
+        <a
+          [routerLink]="['/contact']"
+          class="nav-link"
+          [routerLinkActive]="'active'"
+          class="nav-link"
+          ><i class="bx bx-envelope"></i> <span>Contact</span></a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
