@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -22,7 +23,7 @@ export class ContactComponent implements OnInit {
     ]),
   });
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
@@ -40,6 +41,14 @@ export class ContactComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.contactForm.reset();
+    this.http
+      .get(`https://api.trumail.io/v2/lookups/json?email=${this.email.value}`)
+      .subscribe((validation: any) => {
+        if (validation.validFormat) {
+          this.contactForm.reset();
+        } else {
+          this.email.setErrors({ email: 'Invalid format' });
+        }
+      });
   }
 }
