@@ -8,14 +8,26 @@ const ROUTES: Routes = [
   {
     path: '',
     component: HomeComponent,
+    data: {
+      title: 'Home',
+      description: 'I am Carolina Blanco',
+    },
   },
   {
     path: 'about',
     component: AboutComponent,
+    data: {
+      title: 'About',
+      description: 'About me',
+    },
   },
   {
     path: 'contact',
     component: ContactComponent,
+    data: {
+      title: 'Contact',
+      description: 'Contact me',
+    },
   },
   {
     path: '**',
