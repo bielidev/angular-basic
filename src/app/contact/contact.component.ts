@@ -23,6 +23,8 @@ export class ContactComponent implements OnInit {
     ]),
   });
 
+  isFormSent: boolean;
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
@@ -46,6 +48,7 @@ export class ContactComponent implements OnInit {
       .subscribe((validation: any) => {
         if (validation.validFormat) {
           this.contactForm.reset();
+          this.isFormSent = true;
         } else {
           this.email.setErrors({ email: 'Invalid format' });
         }

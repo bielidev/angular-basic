@@ -28,6 +28,9 @@
             </div>
 
             <div class="col-lg-8 mt-5 mt-lg-0">
+                <div class="alert alert-success" role="alert" *ngIf="isFormSent">
+                    Your message was successfully delivered.
+                </div>
                 <form role="form" class="php-email-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                     <div class="row">
                         <div class="col-md-6 form-group">
